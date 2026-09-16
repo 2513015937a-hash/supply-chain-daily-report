@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大宗原材料行情简报 · 历史归档</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    max-width: 800px; margin: 0 auto; padding: 32px 24px 80px;
+    background: #f6f7f9; color: #1f2328; line-height: 1.7;
+  }
+  .header { border-bottom: 2px solid #1f2328; padding-bottom: 16px; margin-bottom: 24px; }
+  .header h1 { margin: 0 0 6px; font-size: 22px; font-weight: 600; }
+  .header .meta { color: #6e7781; font-size: 13px; }
+
+  .desc { color: #4b5563; font-size: 14px; margin-bottom: 24px; }
+
+  ul.list { list-style: none; padding: 0; margin: 0; background: #fff;
+            border: 1px solid #d0d7de; border-radius: 6px; overflow: hidden; }
+  ul.list li { border-bottom: 1px solid #ebedf0; }
+  ul.list li:last-child { border-bottom: none; }
+  ul.list a {
+    display: flex; align-items: center; padding: 14px 18px;
+    text-decoration: none; color: #1f2328;
+  }
+  ul.list a:hover { background: #f6f8fa; }
+  .date { font-weight: 600; margin-right: 12px; min-width: 104px; }
+  .badge {
+    display: inline-block; font-size: 11px; font-weight: 600; line-height: 1.6;
+    padding: 0 7px; border-radius: 3px; margin-right: 14px; min-width: 42px;
+    text-align: center;
+  }
+  .badge.am { background: #eef4ff; color: #0969da; }
+  .badge.pm { background: #fff4e5; color: #bc4c00; }
+  .title { color: #4b5563; flex: 1; font-size: 13px; }
+  .arrow { color: #8b949e; }
+
+  .footer {
+    margin-top: 32px; padding-top: 16px; border-top: 1px solid #d0d7de;
+    color: #8b949e; font-size: 12px; text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>大宗原材料行情简报</h1>
+  <div class="meta">供应链中心 · 历史归档入口（每日 08:00 早报 / 20:00 晚报 自动更新）</div>
+</div>
+
+<div class="desc">
+  覆盖品类：原油 / 沥青 / 动力煤 / 脱硫石膏 / 护面纸 / 热轧板卷 / SBS / 钛白粉 / 乳液 / 环氧树脂 / 金属包装 / 塑料包装（PP）。<br>
+  数据来源：卓创资讯 / 隆众资讯 / Mysteel / 生意社 / 公开新闻汇编。
+</div>
+
+<ul class="list" id="list">
+  <li><a href="2026-09-16-pm.html">
+    <span class="date">2026-09-16</span>
+    <span class="badge pm">晚报</span>
+    <span class="title">原油系日内反转（API库存意外大增·SC原油日盘收跌）· 沥青PP与原油背离（检修+库存去化对冲回调）· 环氧树脂挺价意愿增强</span>
+    <span class="arrow">›</span>
+  </a></li>
+  <li><a href="2026-09-16-am.html">
+    <span class="date">2026-09-16</span>
+    <span class="badge am">早报</span>
+    <span class="title">原油系地缘溢价推升 · 煤焦钢企稳修复 · 环氧树脂方向修正为高位整理 · 瓦楞纸涨价函与现货背离</span>
+    <span class="arrow">›</span>
+  </a></li>
+</ul>
+
+<div class="footer">
+  本简报基于公开信息汇编整理，仅供供应链采购决策参考。
+</div>
+
+<script>
+  // 由每日自动化任务自动追加；此处保留扩展位
+  // 新增的报告条目按日期倒序插入到列表最前面（同一天内晚报在早报之前）
+  // 模板：
+  // <li><a href="YYYY-MM-DD-am.html">
+  //   <span class="date">YYYY-MM-DD</span>
+  //   <span class="badge am">早报</span>
+  //   <span class="title">一句话摘要</span>
+  //   <span class="arrow">›</span>
+  // </a></li>
+  // <li><a href="YYYY-MM-DD-pm.html">
+  //   <span class="date">YYYY-MM-DD</span>
+  //   <span class="badge pm">晚报</span>
+  //   <span class="title">一句话摘要</span>
+  //   <span class="arrow">›</span>
+  // </a></li>
+</script>
+
+</body>
+</html>
