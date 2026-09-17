@@ -79,6 +79,28 @@
   .news-list .note { color: #6e7781; font-size: 12px; margin-left: 6px; }
   .news-list .note-summary { display: block; margin: 4px 0 4px 16px; padding: 4px 8px; background: #f6f8fa; border-left: 3px solid #0969da; color: #24292f; font-size: 13px; line-height: 1.55; }
 
+  /* 信号判定：跨品类矛盾信号的结构化梳理 */
+  .sig-intro { color: #6e7781; font-size: 12px; margin: 0 0 10px; }
+  .signal { background: #fff; border: 1px solid #d0d7de;
+            border-radius: 6px; padding: 12px 18px; margin: 10px 0; }
+  .signal .sig-head { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  .sig-tag { font-size: 11px; font-weight: 500; padding: 1px 7px;
+             border-radius: 3px; margin-right: 6px; white-space: nowrap; }
+  .tag-wait { background: #fff8c5; color: #7d4e00; border: 1px solid #e3c000; }
+  .tag-set  { background: #dafbe1; color: #0f5323; border: 1px solid #7fd18f; }
+  .signal p { margin: 0 0 6px; font-size: 13px; text-indent: 0; }
+  .signal p:last-child { margin-bottom: 0; }
+  .signal .lbl { color: #6e7781; font-weight: 600; }
+  .signal a { color: #0969da; text-decoration: none;
+              border-bottom: 1px dotted #b6bac1; }
+  .signal a:hover { color: #0550ae; border-bottom-color: #0969da; }
+  .cal { background: #fff; border-left: 4px solid #1f2328;
+         padding: 12px 18px; margin: 10px 0; }
+  .cal .lbl { color: #6e7781; font-weight: 600; font-size: 13px;
+              display: block; margin-bottom: 6px; }
+  .cal ul { margin: 0; padding-left: 20px; }
+  .cal li { margin: 5px 0; font-size: 13px; }
+
   .footer { color: #6e7781; font-size: 12px; text-align: center;
             margin-top: 40px; padding-top: 16px; border-top: 1px solid #d0d7de; }
 </style>
@@ -93,7 +115,7 @@
     <span>基于 2026-09-17 当日公开新闻</span>
   </div>
   <div class="verify">
-    <strong>数据时效核验：</strong>本期逐条核对发布日与数据日。<strong>原油方向修正</strong>——此前"高位震荡"，因<a href="https://www.nbd.com.cn/articles/2026-09-17/4583727.html">SC原油夜盘收804.8元/桶（-4.01%）</a>修正为"高位回调"。动力煤口径微调：产地由"结构性反弹"转为"涨势松动"；本期剔除两处时效不足的依据——金十所引"8月规上工业原煤产量同比-7.7%"属月度统计局数据、Mysteel"9月中旬口径"属旬度综述，改用<a href="https://goodsfu.10jqka.com.cn/20260916/c679956769.shtml">中电联9月16日最新判断</a>、<a href="https://finance.sina.com.cn/money/future/nyzx/2026-09-16/doc-iniryquy7930482.shtml">生意社9月16日趋势分析</a>与<a href="https://www.ccedia.com/finance_detail/1549848723640827904.html">中信建投9月16日研报</a>，并配当日现货、库存、日耗数据做自主分析。剔除2025年旧文4条（<a href="https://m.mysteel.com/a/25091717/D9391D2E90D1ECA0_abc.html">Mysteel每日钢市</a>、<a href="https://nenghua.mysteel.com/a/25091717/AB22352346D83CDB.html">隆众环氧聚焦稿</a>均系URL含25091717的往年旧文；SunSirs 9月17日PP稿7100元/吨、信达煤炭研报为2025年价格水平，一并剔除）。
+    <strong>数据时效核验：</strong>本期逐条核对发布日与数据日。<strong>原油方向修正</strong>——此前"高位震荡"，因<a href="https://www.nbd.com.cn/articles/2026-09-17/4583727.html">SC原油夜盘收804.8元/桶（-4.01%）</a>修正为"高位回调"。动力煤口径微调：产地由"结构性反弹"转为"涨势松动"；本期剔除两处时效不足的依据——金十所引"8月规上工业原煤产量同比-7.7%"属月度统计局数据、Mysteel"9月中旬口径"属旬度综述，改用<a href="https://goodsfu.10jqka.com.cn/20260916/c679956769.shtml">中电联9月16日最新判断</a>、<a href="https://finance.sina.com.cn/money/future/nyzx/2026-09-16/doc-iniryquy7930482.shtml">生意社9月16日趋势分析</a>与<a href="https://www.ccedia.com/finance_detail/1549848723640827904.html">中信建投9月16日研报</a>，并配当日现货、库存、日耗数据做自主分析。剔除2025年旧文4条（<a href="https://m.mysteel.com/a/25091717/D9391D2E90D1ECA0_abc.html">Mysteel每日钢市</a>、<a href="https://nenghua.mysteel.com/a/25091717/AB22352346D83CDB.html">隆众环氧聚焦稿</a>均系URL含25091717的往年旧文；SunSirs 9月17日PP稿7100元/吨、信达煤炭研报为2025年价格水平，一并剔除）。本期新增「信号判定」小节，对当日跨品类矛盾信号作结构化梳理（数据截至 9 月 17 日日盘收盘）。
   </div>
 </div>
 
@@ -239,7 +261,39 @@
   <p>环氧树脂前一日涨1.29%至15650元/吨、双酚A微涨（<a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>），偏强运行主要靠低开工与挺价情绪支撑；隔夜油价大跌后成本支撑面临重估。<a href="https://nenghua.mysteel.com/a/26091708/0EEC50FD8CCF20EE.html">隆众早间提示</a>确认钛白粉昨日持稳；乳液成本推动延续但动能或随油价回调减弱（<a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>丙烯酸微涨0.19%）。今日关注化工品低开幅度。</p>
 </div>
 
-<h2>四、后市关注点</h2>
+<h2>四、信号判定</h2>
+<p class="sig-intro">对当日出现的跨品类矛盾信号作结构化梳理，数据截至 2026-09-17 日盘收盘及当日公开信息；仅提示市场风险，不构成采购操作指令。</p>
+
+<div class="signal">
+  <div class="sig-head"><span class="sig-tag tag-wait">信号待确认</span>沥青：成本端已回落，现货挺价尚未松动</div>
+  <p><span class="lbl">依据</span>：9 月 17 日日盘 <a href="https://m.cngold.org/energy/xw10764826.html">SC 原油主力收 785.20 元/桶（-6.35%）</a>，<a href="https://m.cngold.org/energy/xw10764826.html">沥青主力收 5758 元/吨（+0.45%）</a>，为能源系唯一收红品种；<a href="https://goodsfu.10jqka.com.cn/20260917/c679993781.shtml">生意社</a>报京博炼厂临时停止装车、恢复时间待定，山东重交沥青现货 5820—6020 元/吨；<a href="https://qhweb.eastmoney.com/news/202609173877250712.html">隆众</a>报本周 92 家沥青炼厂产能利用率 24.4%、环比回升 2.4 个百分点（上海石化、镇海炼化、中化泉州复产，克拉玛依检修结束）。</p>
+  <p><span class="lbl">含义</span>：现货抗跌由厂库社库低位与可交割资源不足支撑，而非需求拉动；炼厂开工环比回升意味着供应端最紧阶段边际缓解，成本与现货的背离走向取决于两者相对强弱。观察京博复装时点与 9 月 18 日社会库存数据。</p>
+</div>
+
+<div class="signal">
+  <div class="sig-head"><span class="sig-tag tag-wait">信号待确认</span>动力煤：产地抢跑涨价，港口受外购下调压制</div>
+  <p><span class="lbl">依据</span>：神华外购价 9 月 17 日 18 时起巴图塔、燕家塔各卡数普降 10 元/吨，黄骅港基准价下调 6—9 元/吨，中长协持平但阶段性发运激励取消（实际采购成本下移约 7—10 元/吨）；陕煤 9 月 18—24 日执行周期竞拍中，柠条塔原煤均价 868 元/吨（较前期 +83）、韩家湾 766 元/吨（+47）、凉水井 750—757 元/吨（+67）；北方港 9 月 17 日秦港场存 625 万吨（+7）、曹妃甸 1097 万吨（-12）、京唐港 546 万吨（+13）；沿海六大电 9 月 16 日库存 1422.4 万吨、日耗 83.16 万吨、可用 17 天（<a href="https://list1.mysteel.com/zhishi/jrdlmjg.html">Mysteel 当日口径</a>）。</p>
+  <p><span class="lbl">含义</span>：产地涨价由节前补库与高卡块煤结构性紧缺驱动，港口则受外购下调与终端压价压制，尚未形成全面上涨。观察神华外购下一期是否延续下调，以及<a href="https://www.china5e.com/news/news-1209365-1.html">大秦线秋检（暂定 10 月 7—26 日）</a>启动前的终端补库力度。</p>
+</div>
+
+<div class="signal">
+  <div class="sig-head"><span class="sig-tag tag-set">趋势确立</span>涂料·乳液：9 月初提价函仍在执行窗口，成本端出现反向变化</div>
+  <p><span class="lbl">依据</span>：9 月 1 日起水性丙烯酸乳液集体提价——巴德富 10%、广东恒和永盛 10%—15%、上海保立佳 10%、万华表面材料 10%，叠加 8 月中旬首轮后累计涨幅 15%—25%；防水端科顺（9 月 21 日起）、大禹（9 月 20 日起）、阿尔法（9 月 15 日起）陆续执行，沥青类卷材上调 10%。成本端 9 月中旬仍在走高：<a href="https://www.100ppi.com/data/detail-20260916-1249208.html">上海华谊新材料华东丙烯酸丁酯送到价 9 月 16 日 10400 元/吨（+100）</a>、卫星化学华东 9 月 14 日 9300 元/吨（+600）。</p>
+  <p><span class="lbl">含义</span>：本轮提价属成本推动型，源于 8 月至 9 月初原料高位；9 月 17 日原油单日回落 6.35% 构成反向信号，提价在 10 月新单中的落地强度需重新评估。观察 10 月新单执行价与丙烯酸丁酯是否跟随回落。</p>
+</div>
+
+<div class="cal">
+  <span class="lbl">近期确定时点</span>
+  <ul>
+    <li><strong>9 月 18 日 14:00 报名截止 / 14:30 竞价</strong>：<a href="https://www.youzhicai.com/nd/48230a1d-03f6-4926-904a-ad5bf6a2bf2d-2.html">潘集电厂脱硫石膏</a>竞价销售。</li>
+    <li><strong>9 月 18 日 18:00</strong>：神华外购下一期价格（巴图塔、燕家塔）。</li>
+    <li><strong>9 月 18 日</strong>：沥青社会库存周度数据。</li>
+    <li><strong>9 月 24 日</strong>：黄骅港基准价下一期（本期执行至 9 月 23 日 24:00）。</li>
+    <li><strong>10 月 7—26 日</strong>：大秦线秋季集中修（暂定，为期 20 天）。</li>
+  </ul>
+</div>
+
+<h2>五、后市关注点</h2>
 <div class="advice">
   <ul>
     <li><strong>原油系下游（沥青/SBS/环氧/乳液/PP）</strong>：隔夜SC夜盘大跌4.01%（<a href="https://www.nbd.com.cn/articles/2026-09-17/4583727.html">每经</a>），成本支撑普遍面临回落风险；关注今日日盘低开幅度与现货跟跌节奏。</li>
@@ -251,7 +305,7 @@
   <div class="meta" style="margin-top:10px;">本部分基于上述分品类信息源整理，仅提示市场风险，不构成采购操作指令。</div>
 </div>
 
-<h2>五、各品类近期最重要新闻</h2>
+<h2>六、各品类近期最重要新闻</h2>
 
 <details class="news-list">
   <summary>1. 原油 <span class="cnt">（6条）</span></summary>
