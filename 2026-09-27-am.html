@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大宗原材料行情简报 · 2026-09-27 早报</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px;
+    background: #f6f7f9; color: #1f2328; line-height: 1.7;
+  }
+  .header { border-bottom: 2px solid #1f2328; padding-bottom: 16px; margin-bottom: 24px; }
+  .header h1 { margin: 0 0 6px; font-size: 22px; font-weight: 600; }
+  .meta { color: #6e7781; font-size: 13px; }
+  .meta span { margin-right: 16px; }
+  .meta .ed { color: #1f2328; font-weight: 600; }
+  .verify { margin-top: 8px; padding: 8px 12px; background: #fff;
+            border-left: 3px solid #0969da; font-size: 12px; color: #57606a; }
+
+  h2 { font-size: 17px; font-weight: 600; margin: 32px 0 12px;
+       padding-left: 10px; border-left: 4px solid #1f2328; }
+
+  .overview a, .focus-item a, .advice a, td a {
+    color: #0969da; text-decoration: none;
+    border-bottom: 1px dotted #b6bac1;
+  }
+  .overview a:hover, .focus-item a:hover, .advice a:hover, td a:hover {
+    color: #0550ae; border-bottom-color: #0969da;
+  }
+
+  .overview p { margin: 0 0 12px; text-indent: 2em; }
+
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: #fff;
+          font-size: 13px; }
+  th { background: #1f2328; color: #fff; padding: 10px 8px;
+       text-align: left; font-weight: 500; white-space: nowrap; }
+  td { padding: 10px 8px; border-bottom: 1px solid #eaecef;
+       vertical-align: top; }
+  td.cat { font-weight: 600; background: #f6f7f9; white-space: nowrap; }
+  td.none { color: #b6bac1; text-align: center; }
+  .trend-up   { color: #cf222e; font-weight: 600; white-space: nowrap; }
+  .trend-down { color: #1a7f37; font-weight: 600; white-space: nowrap; }
+  .trend-flat { color: #6e7781; font-weight: 600; white-space: nowrap; }
+
+  .focus-item { background: #fff; border: 1px solid #d0d7de;
+                border-radius: 6px; padding: 14px 18px; margin: 12px 0; }
+  .focus-item h3 { margin: 0 0 8px; font-size: 15px; font-weight: 600; }
+  .focus-item p { margin: 0; text-indent: 2em; }
+
+  .advice { background: #fff; border-left: 4px solid #1f2328;
+            padding: 14px 18px; margin: 12px 0; }
+  .advice ul { margin: 0; padding-left: 20px; }
+  .advice li { margin: 6px 0; }
+
+  details.news-list { background: #fff; border: 1px solid #d0d7de;
+               border-radius: 6px; padding: 10px 16px; margin: 10px 0; }
+  details.news-list summary { cursor: pointer; font-weight: 600;
+               font-size: 14px; color: #1f2328; padding: 4px 0;
+               display: flex; align-items: center; justify-content: space-between;
+               user-select: none; list-style: none; }
+  details.news-list summary::-webkit-details-marker { display: none; }
+  details.news-list summary::after { content: '＋ 展开'; color: #6e7781;
+               font-weight: 400; font-size: 12px; white-space: nowrap; }
+  details.news-list[open] summary::after { content: '－ 收起'; }
+  details.news-list[open] summary { border-bottom: 1px solid #eaecef;
+               margin-bottom: 8px; padding-bottom: 8px; }
+  details.news-list h3 { margin: 0 0 8px; font-size: 14px; font-weight: 600;
+                  color: #1f2328; }
+  .news-list ul { margin: 0; padding-left: 20px; }
+  .news-list li { margin: 6px 0; font-size: 13px; }
+  .news-list a { color: #0969da; text-decoration: none;
+                 border-bottom: 1px dotted #b6bac1; }
+  .news-list a:hover { color: #0550ae; border-bottom-color: #0969da; }
+  .news-list .cnt { color: #6e7781; font-weight: 400; font-size: 12px; }
+  .news-list .note { color: #6e7781; font-size: 12px; margin-left: 6px; }
+  .news-list .note-summary { display: block; margin: 4px 0 4px 16px; padding: 4px 8px; background: #f6f8fa; border-left: 3px solid #0969da; color: #24292f; font-size: 13px; line-height: 1.55; }
+
+  .sig-intro { color: #6e7781; font-size: 12px; margin: 0 0 10px; }
+  .signal { background: #fff; border: 1px solid #d0d7de;
+            border-radius: 6px; padding: 12px 18px; margin: 10px 0; }
+  .signal .sig-head { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  .sig-tag { font-size: 11px; font-weight: 500; padding: 1px 7px;
+             border-radius: 3px; margin-right: 6px; white-space: nowrap; }
+  .tag-wait { background: #fff8c5; color: #7d4e00; border: 1px solid #e3c000; }
+  .tag-set  { background: #dafbe1; color: #0f5323; border: 1px solid #7fd18f; }
+  .signal p { margin: 0 0 6px; font-size: 13px; text-indent: 0; }
+  .signal p:last-child { margin-bottom: 0; }
+  .signal .lbl { color: #6e7781; font-weight: 600; }
+  .signal a { color: #0969da; text-decoration: none;
+              border-bottom: 1px dotted #b6bac1; }
+  .signal a:hover { color: #0550ae; border-bottom-color: #0969da; }
+  .cal { background: #fff; border-left: 4px solid #1f2328;
+         padding: 12px 18px; margin: 10px 0; }
+  .cal .lbl { color: #6e7781; font-weight: 600; font-size: 13px;
+              display: block; margin-bottom: 6px; }
+  .cal ul { margin: 0; padding-left: 20px; }
+  .cal li { margin: 5px 0; font-size: 13px; }
+
+  .footer { color: #6e7781; font-size: 12px; text-align: center;
+            margin-top: 40px; padding-top: 16px; border-top: 1px solid #d0d7de; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>大宗原材料行情简报</h1>
+  <div class="meta">
+    <span class="ed">早报 · 2026年9月27日（周日）</span>
+    <span>覆盖品类：12项</span>
+    <span>基于 2026-09-27 当日公开新闻</span>
+  </div>
+  <div class="verify">
+    <strong>数据时效核验：</strong>本期数据期——国内期货与现货最后交易日为9月24日（9月25—27日中秋休市，<a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表</a>）；外盘为美东9月25日收盘、9月26日早间报道，不径称"今日盘中"。周六（9月26日）特朗普拒绝伊朗"七日重开霍尔木兹"方案，为本期最新方向变量（<a href="https://www.toutiao.com/article/7689994329128960531/">京报网9月27日</a>）。剔除旧稿3组：<a href="https://m.mysteel.com/oilchem/a/25092614/AB22CF7764E83A21_abc.html">隆众"2025年9月26日广州抗冲共聚PP"（K8003报7700元/吨，系2025年水平）</a>、隆众环氧产业链20250926表（E-51报14650元/吨，2025年口径）、煤炭资源网2025年9月26日周评（秦港708元/吨）。WTI周跌口径存在分歧（-3.82%与-7.87%并列出现），本期仅采用日跌幅；布油97.62美元口径与104.32美元主流口径分歧，采用后者。
+  </div>
+</div>
+
+<h2>一、早间总览</h2>
+<div class="overview">
+
+<p>原油系假期反复：周五（美东9月25日）WTI收92.41美元/桶（-2.33%）、布伦特收104.32美元/桶（-2.14%），主因伊朗提出"七日内重开霍尔木兹"计划、地缘溢价回吐（<a href="https://news.qq.com/rain/a/20260926A02UCD00">华尔街见闻</a>）；但周六特朗普拒绝该提议、称美方完全控制海峡（<a href="https://www.toutiao.com/article/7689994329128960531/">京报网</a>），伊朗总统称不再信任与美对话，节后能化盘面临重定价。</p>
+
+<p>煤焦钢系：动力煤高位震荡——<a href="https://list1.mysteel.com/zhishi/2026ndlmjgylb.html">Mysteel</a>9月24日秦皇岛Q5500平仓983元/吨、广州港Q5500报1030—1050元；<a href="https://m.163.com/news/article/L7PAPITK0512D03F.html">华夏时报</a>9月26日报道秦港5500K报987元/吨、年内累涨近47%，卓创判断10月"先强后弱"。热卷9月24日收3298元/吨（-11）、焦煤1509元/吨（-22）（<a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社</a>）；冷轧钢板指数9月26日报3473.4点（-5.90）（<a href="https://list1.mysteel.com/zhishi/2026nlyzs.html">Mysteel</a>）。</p>
+
+<p>涂料树脂与纸链：节前现货冻结——<a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>9月25日化工涨跌榜66种持平（仅乙醇+0.36%、液氨-3.10%），环氧树脂15650、双酚A 11190、丁二烯13433元/吨均持平。万华丙烯酸丁酯9月20日东北报价再涨150至10450元/吨（<a href="https://finance.sina.com.cn/stock/relnews/cn/2026-09-20/doc-inisnhav1536865.shtml">生意社/新浪</a>）；<a href="https://www.paper.com.cn/news/daynews/2026/26091509183318844.htm">纸业网</a>报玖龙九大基地9月25日—10月10日多批次涨价函陆续执行。</p>
+
+</div>
+
+<h2>二、12品类快讯</h2>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>品类</th>
+      <th>当日变动</th>
+      <th>后市预测</th>
+      <th>趋势</th>
+      <th>关注点/风险</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td class="cat">1. 原油</td>
+    <td>美东9月25日WTI收92.41美元/桶（-2.33%）、布伦特收104.32美元/桶（-2.14%）（<a href="https://www.chnfund.com/article/2abaf4bf-32f1-eb47-c908-3a23ec144674">中国基金报</a>）；周六特朗普拒绝伊朗"七日方案"（<a href="https://www.toutiao.com/article/7689994329128960531/">京报网</a>）。</td>
+    <td><a href="https://www.toutiao.com/a1877351925389316">申万宏源</a>（9月26日稿引）：选举前中枢约100美元、之后逐季下行至75；ICE布油投机净多头大幅减少（<a href="https://news.qq.com/rain/a/20260926A02R1700">陆家嘴早餐</a>）。</td>
+    <td class="trend-down">↓ 回落但反复</td>
+    <td class="none">—</td>
+  </tr>
+
+  <tr>
+    <td class="cat">2. 沥青</td>
+    <td>9月24日主力收5256元/吨、日涨5.35%但周跌8.46%（<a href="https://energy.cngold.org/c/2026-09-26/c10781181.html">金投网</a>）；周产量38.2万吨、环比-4.3%（<a href="https://energy.cngold.org/c/2026-09-26/c10781181.html">隆众</a>）。</td>
+    <td><a href="https://energy.cngold.org/c/2026-09-26/c10781181.html">国投期货</a>：低供应低库存下回调空间有限；<a href="https://energy.cngold.org/c/2026-09-26/c10781181.html">南华期货</a>：需求走弱、稳中偏弱。<strong>本期自主分析</strong>：综合考量①周跌8.46%②产量同比-45.5%③厂库社库年内新低④外盘油价回落，判断节后跟随油价宽幅震荡。</td>
+    <td class="trend-flat">→ 高位回落整理</td>
+    <td>中下游采购高价资源意愿弱、改性沥青产能利用率仅10.2%；关注炼厂复产与油价传导节奏。</td>
+  </tr>
+
+  <tr>
+    <td class="cat">3. 动力煤</td>
+    <td><a href="https://list1.mysteel.com/zhishi/2026ndlmjgylb.html">Mysteel</a>9月24日秦皇岛Q5500平仓983元/吨、广州港Q5500报1030—1050元；<a href="https://m.163.com/news/article/L7PAPITK0512D03F.html">华夏时报</a>9月26日报道秦港5500K报987元/吨（9月23日）、9月9—10日曾触及1002元。</td>
+    <td><a href="https://m.163.com/news/article/L7PAPITK0512D03F.html">卓创任慧云</a>：10月高位震荡、先强后弱；<a href="https://m.163.com/news/article/L7PAPITK0512D03F.html">一德期货曾翔</a>：补库释放则站上千元难度不大。<strong>本期自主分析</strong>：综合考量①价近千元②日耗季节性回落③三部门稳产稳供通知落地④大秦线秋检临近，判断高位震荡、上行斜率放缓。</td>
+    <td class="trend-flat">→ 高位震荡</td>
+    <td>下游对高价抵触、节前补库冷清；关注保供产量释放、大秦线秋检与日耗回落斜率。</td>
+  </tr>
+
+  <tr>
+    <td class="cat">4. 脱硫石膏</td>
+    <td><a href="https://www.sxhbcyw.cn/translate/show.php?itemid=72606">聊城发电厂</a>10—11月脱硫石膏2.5万吨询价（9月20日报价）；<a href="https://www.huanbaozhaobiao.com/news-cd083b8d5866289a2d82cd4be376e56a">灵台电厂</a>9月20日竞价、起拍-25元/吨。</td>
+    <td>供暖季与年度合同集中切换：<a href="https://www.infochina.cn/zhaobiao-20260918151706791541.html">国能江油热电</a>2027年度5万吨竞价9月21日开启；<a href="https://ccb.dlnyzb.com/detail/42358882">望亭发电</a>2026—2027年度销售9月20日截止。区域处置费分化延续。</td>
+    <td class="trend-flat">→ 平稳</td>
+    <td>负价起拍（-25元/吨）与补贴处置并存；关注年度合同中标价与运输半径变化。</td>
+  </tr>
+
+  <tr>
+    <td class="cat">5. 护面纸/瓦楞纸</td>
+    <td><a href="https://www.paper.com.cn/news/daynews/2026/26091509183318844.htm">纸业网</a>：玖龙天津/河北9月26日瓦楞+50生效、9月28日牛卡+50，东莞9月25日再生牛卡+50；太仓玖龙瓦楞120g现报3440元/吨（<a href="https://www.paper.com.cn/price/biztipsview.php?id=16210">纸业网9月21日</a>）。</td>
+    <td>—</td>
+    <td class="trend-up">↑ 挺价（连续函）</td>
+    <td class="none">—</td>
+  </tr>
+
+  <tr>
+    <td class="cat">6. 热轧板卷</td>
+    <td>9月24日热卷2701收3298元/吨（-11）（<a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社</a>）；焦炭1974.5（-13）、焦煤1509（-22）、铁矿713.5（-2）成本端走弱。</td>
+    <td><a href="https://list1.m.mysteel.com/zhishi/2026nryzs84592.html">Mysteel</a>：社库354.7万吨（-7.45）、钢厂盈利率仅7.79%，预计10月价格中枢下移至3150—3400元/吨、前高后低。</td>
+    <td class="trend-flat">→ 震荡偏弱</td>
+    <td>成本支撑随双焦走弱而松动；关注节后补库力度、控产落地与出口订单。</td>
+  </tr>
+
+  <tr>
+    <td class="cat">7. SBS</td>
+    <td>中石化丁二烯9月24日执行13500元/吨、周内下调（<a href="https://www.mysteel.com/hot/1638300.html">隆众周评</a>）；丁二烯橡胶9月24日收15680元/吨（+545）（<a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社</a>）；<a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>9月25日丁二烯13433元/吨持平。</td>
+    <td><a href="https://www.mysteel.com/hot/1638300.html">隆众</a>周评：SBS产能利用率28.76%（-7.01pct）、企业库存2.20万吨（-1.79%），成本下移与低供应僵持；<strong>本期自主分析</strong>：假期外盘原油回落或加速丁二烯补跌，节后SBS报价承压但亏损下挺价仍存。</td>
+    <td class="trend-flat">→ 高位整理</td>
+    <td>道改、防水、鞋材三大下游旺季不旺；关注丁二烯回落向SBS报价的传导。</td>
+  </tr>
+
+  <tr>
+    <td class="cat">8. 钛白粉</td>
+    <td><a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>9月25日报14220元/吨持平；<a href="https://m.mysteel.com/hot/1592966.html">隆众周评</a>：9月24日金红石型均价14166元/吨（周+0.58%）；龙佰R996报15800元/吨。</td>
+    <td><a href="https://stock.10jqka.com.cn/20260924/c680251040.shtml">同花顺</a>9月24日：成本、供给收缩与旺季三重支撑，金红石型主流14500—15500元/吨；<strong>本期自主分析</strong>：涨价函落地与终端承接博弈，短期持稳偏强、涨幅受限。</td>
+    <td class="trend-flat">→ 持稳偏强</td>
+    <td>华南金红石型13800—14800元/吨、成交单议；关注硫酸回落后的成本分化与出口节奏。</td>
+  </tr>
+
+  <tr>
+    <td class="cat">9. 乳液</td>
+    <td>万华丙烯酸丁酯9月20日东北报价10450元/吨（+150）（<a href="https://finance.sina.com.cn/stock/relnews/cn/2026-09-20/doc-inisnhav1536865.shtml">生意社/新浪</a>）；<a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>9月25日丙烯酸8566.67元/吨持平。</td>
+    <td>当日暂无乳液机构后市观点。<strong>本期自主分析</strong>：综合考量①万华挂牌连涨（9月17日四区域+150、9月20日东北+150）②9月25日现货持平③假期外盘油价回落，判断节前挺价延续、节后成本传导动能减弱。</td>
+    <td class="trend-up">↑ 成本推动（放缓）</td>
+    <td>终端价涨量缩、节前备货收尾；关注苯乙烯、丙烯酸丁酯节后走势与新单定价。</td>
+  </tr>
+
+  <tr>
+    <td class="cat">10. 环氧树脂</td>
+    <td><a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>9月25日涨跌榜：环氧树脂15650、双酚A 11190、环氧氯丙烷11200元/吨均持平；当日无隆众9月26—27日日评命中（已检索）。</td>
+    <td>节前备货结束、现货冻结。<strong>本期自主分析</strong>：综合考量①双酚A、ECH高位持稳②液体树脂低开工挺价③假期外盘油价回落2%+，判断节后开盘或承压、高位僵持待原料重定价。</td>
+    <td class="trend-flat">→ 高位僵持</td>
+    <td>隔夜成本变量落地节后集中定价；关注双酚A、ECH节后跟随幅度。</td>
+  </tr>
+
+  <tr>
+    <td class="cat">11. 金属包装</td>
+    <td><a href="https://list1.mysteel.com/zhishi/2026nlyzs.html">Mysteel</a>钢板价格指数9月26日报3473.4点（-5.90）；9月24日当周冷轧社库232.09万吨（+0.79）、五大品种总库存1481.97万吨（-55.76）。</td>
+    <td><a href="https://list1.mysteel.com/zhishi/2026nlyzs.html">Mysteel</a>：成本托底与需求疲软并存，短期冷轧窄幅震荡、10月价格重心下移压力较大（西南库存同比+11.4%）。</td>
+    <td class="trend-flat">→ 弱稳</td>
+    <td>西南汽车排产骤降拖累去库；关注家电、汽车订单边际与钢厂检修。</td>
+  </tr>
+
+  <tr>
+    <td class="cat">12. 塑料包装（PP·华南·K8003）</td>
+    <td>中塑在线K8003（茂名石化）参考价最新至9月18日报10600元/吨（<a href="https://intl.21cp.com/market/detail/157572995177545728--1.html">中塑在线</a>）；9月24日PP2701收8631元/吨（+90）（<a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社</a>）。</td>
+    <td>当日无华南K8003新报价（9月19—26日未更新）。<strong>本期自主分析</strong>：综合考量①期货9月24日收涨②假期外盘油价累计回落③丙烯9444元/吨持稳（<a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>），判断节后盘面随油价回调、现货补跌压力大于补涨。</td>
+    <td class="trend-flat">→ 高位整理</td>
+    <td>K8003数据期滞后至9月18日；关注节后两油库存、华南共聚注塑料报价与基差。</td>
+  </tr>
+
+  </tbody>
+</table>
+</div>
+
+<h2>三、今日重点</h2>
+
+<div class="focus-item">
+  <h3>原油：方向由"溢价回吐"修正为"回落但地缘反复"</h3>
+  <p>原判断：伊朗"七日重开霍尔木兹"方案推动周五WTI收92.41美元/桶（-2.33%）、布伦特104.32美元/桶（-2.14%）（<a href="https://www.chnfund.com/article/2abaf4bf-32f1-eb47-c908-3a23ec144674">中国基金报</a>），地缘溢价回吐。最新判断：周六特朗普拒绝该提议、称美方完全控制海峡，并放话或于11月中期选举后恢复对伊轰炸（<a href="https://www.toutiao.com/article/7689994329128960531/">京报网</a>），伊朗总统称不再信任与美对话。依据来源为9月26—27日报道，方向修正依据即"七日方案"由预期转为被拒。</p>
+</div>
+
+<div class="focus-item">
+  <h3>护面纸：玖龙涨价由单轮升级为跨假期多批次连续执行</h3>
+  <p><a href="https://www.paper.com.cn/news/daynews/2026/26091509183318844.htm">纸业网</a>9月15日汇总：玖龙九大基地自9月25日至10月10日分五批次提价，每批次单品类+50元/吨，五洲特纸、湖北荣成跟涨；<a href="https://www.paper.com.cn/price/biztipsview.php?id=16210">9月21日行情页</a>显示太仓瓦楞120g报3440元/吨、天津玖龙计划9月26日与10月8日各+50。较上期"单轮涨价函落地"，本期特点为提价密度跨假期、节后两批次接力。</p>
+</div>
+
+<div class="focus-item">
+  <h3>化工现货节前冻结，假期外盘变量节后一次性定价</h3>
+  <p><a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>9月25日涨跌榜66种化工品持平（仅乙醇、液氨变动），节前现货实质停摆；而同期外盘原油周五跌超2%、周六地缘反转（<a href="https://www.toutiao.com/article/7689994329128960531/">京报网</a>）。成本端中石化丁二烯9月24日降至13500元/吨、SBS开工降7个百分点（<a href="https://www.mysteel.com/hot/1638300.html">隆众</a>）。节后9月28日开盘，能化品种将集中消化假期外盘变量。</p>
+</div>
+
+<h2>四、信号判定</h2>
+<p class="sig-intro">对当期出现的跨品类矛盾信号作结构化梳理，数据截至9月24日国内日盘收盘（9月25—27日中秋休市）、美东9月25日外盘收盘及9月26—27日公开信息；仅提示市场风险，不构成采购操作指令。</p>
+
+<div class="signal">
+  <div class="sig-head"><span class="sig-tag tag-wait">信号待确认</span>原油：重开预期与拒绝表态的拉锯，节后方向未定</div>
+  <p><span class="lbl">依据</span>：美东9月25日WTI收92.41美元/桶（-2.33%）、布伦特收104.32美元/桶（-2.14%）（<a href="https://www.chnfund.com/article/2abaf4bf-32f1-eb47-c908-3a23ec144674">中国基金报</a>）；ICE数据显示布伦特投机者净多头持仓大幅减少（<a href="https://news.qq.com/rain/a/20260926A02R1700">陆家嘴早餐9月26日</a>）；周六特朗普拒绝伊朗"七日方案"并放话中期选举后或恢复轰炸（<a href="https://www.toutiao.com/article/7689994329128960531/">京报网9月27日</a>）；沙特东西管道9月22日恢复输往延布、但油轮装载尚未恢复（<a href="https://news.qq.com/rain/a/20260926A02UCD00">华尔街见闻早餐</a>）。</p>
+  <p><span class="lbl">含义</span>：溢价回吐与地缘反转在两个交易日内先后出现，方向取决于美伊谈判与军事动作的相对强弱。观察伊朗外长"等待调解方最终立场"的后续表态，以及9月28日节后能化开盘对假期变量的集中定价。</p>
+</div>
+
+<div class="signal">
+  <div class="sig-head"><span class="sig-tag tag-set">趋势确立</span>护面纸：跨假期多批次提价节奏已经形成</div>
+  <p><span class="lbl">依据</span>：玖龙天津/河北9月26日瓦楞+50元/吨、9月28日牛卡+50，东莞9月25日再生牛卡+50，10月8日、10月10日再各+50（<a href="https://www.paper.com.cn/news/daynews/2026/26091509183318844.htm">纸业网</a>）；太仓玖龙瓦楞120g现报3440元/吨、海龙70g报3840元/吨（<a href="https://www.paper.com.cn/price/biztipsview.php?id=16210">纸业网9月21日行情</a>）；五洲特纸、湖北荣成跟涨。</p>
+  <p><span class="lbl">含义</span>：提价函密度跨假期属少见节奏，成本端废纸与煤炭抬升提供名义支撑；实际落地取决于节后成交与中小纸厂跟涨幅度。观察10月8日、10月10日两批次执行情况。</p>
+</div>
+
+<div class="signal">
+  <div class="sig-head"><span class="sig-tag tag-wait">信号待确认</span>能化链：现货节前冻结与成本端反向信号并存</div>
+  <p><span class="lbl">依据</span>：<a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社</a>9月25日涨跌榜66种持平、仅乙醇+0.36%与液氨-3.10%；中石化丁二烯9月24日执行13500元/吨、周内下调（<a href="https://www.mysteel.com/hot/1638300.html">隆众周评</a>），SBS产能利用率28.76%（-7.01pct）；而外盘原油9月25日跌2.33%（<a href="https://www.chnfund.com/article/2abaf4bf-32f1-eb47-c908-3a23ec144674">中国基金报</a>）。</p>
+  <p><span class="lbl">含义</span>：现货高价与盘面成本下移的背离将在节后一次性消化，能化品种补跌或补涨取决于假期油价路径。观察9月28日开盘基差、两油库存与丁二烯是否跟随外盘继续回落。</p>
+</div>
+
+<div class="signal">
+  <div class="sig-head"><span class="sig-tag tag-wait">信号待确认</span>动力煤：价近千元高位与保供放量预期对峙</div>
+  <p><span class="lbl">依据</span>：秦皇岛Q5500平仓983元/吨（9月24日，<a href="https://list1.mysteel.com/zhishi/2026ndlmjgylb.html">Mysteel</a>）、秦港5500K报987元/吨且年内累涨近47%（<a href="https://m.163.com/news/article/L7PAPITK0512D03F.html">华夏时报9月26日</a>）；三部门稳产稳供通知与疆煤外运部署落地、下游对高价抵触、节前补库冷清（同稿）；10月大秦线秋检临近。</p>
+  <p><span class="lbl">含义</span>：价格高位震荡，走向取决于补库需求与保供产量释放的相对强弱。观察10月大秦线秋检启动时点、产地复产进度与日耗回落斜率。</p>
+</div>
+
+<div class="cal">
+  <span class="lbl">近期确定时点</span>
+  <ul>
+    <li><strong>9月28日（周一）</strong>：国内期现货节后首个交易日；玖龙天津/河北、东莞、泉州、重庆、湖北基地牛卡类+50元/吨执行（<a href="https://www.paper.com.cn/news/daynews/2026/26091509183318844.htm">纸业网</a>）。</li>
+    <li><strong>9月30日</strong>：玖龙东莞地龙瓦楞、重庆再生牛卡/瓦楞、泉州瓦楞、湖北再生牛卡+50元/吨执行（<a href="https://www.paper.com.cn/news/daynews/2026/26091509183318844.htm">纸业网</a>）。</li>
+    <li><strong>10月8日 / 10月10日</strong>：玖龙节后两批次瓦楞、牛卡+50元/吨执行（<a href="https://www.paper.com.cn/news/daynews/2026/26091509183318844.htm">纸业网</a>）。</li>
+  </ul>
+</div>
+
+<h2>五、后市关注点</h2>
+<div class="advice">
+  <ul>
+    <li><strong>原油系下游（沥青/SBS/环氧/乳液/PP）</strong>：特朗普拒绝"七日方案"、地缘反复（<a href="https://www.toutiao.com/article/7689994329128960531/">京报网</a>）；关注9月28日节后开盘对假期外盘变量的集中定价与现货跟跌节奏。</li>
+    <li><strong>煤焦钢系（动力煤/热卷/冷轧）</strong>：动力煤高位震荡、10月或先强后弱（<a href="https://m.163.com/news/article/L7PAPITK0512D03F.html">华夏时报</a>）；热卷10月中枢下移压力（<a href="https://list1.m.mysteel.com/zhishi/2026nryzs84592.html">Mysteel</a>）；关注保供产量释放与日耗。</li>
+    <li><strong>钛白粉</strong>：涨价函落地与终端承接博弈、成交单议（<a href="https://stock.10jqka.com.cn/20260924/c680251040.shtml">同花顺</a>）；关注华南主流价与硫酸回落后成本分化。</li>
+    <li><strong>塑料包装（PP·华南·K8003）/金属包装</strong>：K8003最新报10600元/吨（9月18日，<a href="https://intl.21cp.com/market/detail/157572995177545728--1.html">中塑在线</a>）；冷轧10月重心下移压力大（<a href="https://list1.mysteel.com/zhishi/2026nlyzs.html">Mysteel</a>）；关注节后油价传导与下游订单边际变化。</li>
+    <li><strong>脱硫石膏</strong>：供暖季与年度合同竞价集中（<a href="https://www.huanbaozhaobiao.com/news-cd083b8d5866289a2d82cd4be376e56a">灵台-25元/吨起拍</a>、<a href="https://www.sxhbcyw.cn/translate/show.php?itemid=72606">聊城2.5万吨询价</a>）；关注负价起拍扩散与中标价分化。</li>
+  </ul>
+  <div class="meta" style="margin-top:10px;">本部分基于上述分品类信息源整理，仅提示市场风险，不构成采购操作指令。</div>
+</div>
+
+<h2>六、各品类近期最重要新闻</h2>
+
+<details class="news-list">
+  <summary>1. 原油 <span class="cnt">（6条）</span></summary>
+<ul>
+    <li><a href="https://www.toutiao.com/article/7689994329128960531/">特朗普拒绝伊朗"七日重开霍尔木兹"提议，称美方完全控制海峡；伊朗总统称不再信任与美对话</a><span class="note">· 京报网（头条转载） · 9月27日发布，内容涉9月26日表态</span></li>
+    <li><a href="https://news.qq.com/rain/a/20260926A02UCD00">华尔街见闻早餐9月26日：WTI 11月合约收跌2.32%报92.41美元/桶、布伦特收跌2.14%报104.32美元/桶；美伊"七日方案"浮现、油价盘中一度跌超3%；沙特东西输油管道9月22日起恢复运行</a><span class="note">· 华尔街见闻 · 9月26日，数据期美东9月25日收盘</span></li>
+    <li><a href="https://www.chnfund.com/article/2abaf4bf-32f1-eb47-c908-3a23ec144674">国际原油期货结算价大幅下挫：WTI 11月合约92.41美元/桶（-2.33%）、布伦特104.32美元/桶（-2.14%）</a><span class="note">· 中国基金报 · 9月26日（美东9月25日收盘）</span></li>
+    <li><a href="https://news.qq.com/rain/a/20260926A02R1700">陆家嘴财经早餐9月26日：美伊谈判进入技术性阶段；洲际交易所数据显示布伦特投机者净多头持仓大幅减少；美国柴油价格飙升至历史高位、白宫启动柴油出口禁令经济评估</a><span class="note">· 陆家嘴财经早餐（腾讯） · 9月26日</span></li>
+    <li><a href="https://www.toutiao.com/a1877351925389316">当前原油走势分析（9月26日）：地缘溢价快速消退，EIA原油库存单周增296.9万桶、汽油降168.6万桶；IEA称8月全球可测库存再减9500万桶</a><span class="note">· 头条行情分析稿 · 9月26日（库存数据期截至9月18日当周）</span></li>
+    <li><a href="https://tradingeconomics.com/commodity/bitumen">TradingEconomics：沥青（CFD）9月24日报5256元/吨、日涨5.18%、月涨15.47%，历史高点5543元/吨</a><span class="note">· TradingEconomics · 数据期9月24日</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>2. 沥青 <span class="cnt">（5条）</span></summary>
+<ul>
+    <li><a href="https://energy.cngold.org/c/2026-09-26/c10781181.html">沥青期货主力9月24日收5256元/吨、较上周五跌8.46%；本周国内沥青周度总产量38.2万吨（环比-4.3%）、同比-45.5%</a><span class="note">· 金投网（引隆众数据） · 9月26日发布，数据期9月18—24日</span></li>
+    <li><a href="https://energy.cngold.org/c/2026-09-26/c10781181.html">国投期货：高价抑制下游、双节补货退场，但10月地炼排产环比下滑、厂库社库年内新低，回调空间有限；南华期货：稳中偏弱运行</a><span class="note">· 国投期货/南华期货（金投网转） · 9月26日</span></li>
+    <li><a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表：石油沥青2611收5256元/吨、涨67元</a><span class="note">· 生意社 · 9月24日收盘</span></li>
+    <li><a href="https://energy.cngold.org/c/2026-09-26/c10781181.html">本周54家沥青厂家样本出货量30.4万吨（环比-6.2%）；69家改性沥青企业产能利用率10.2%（环比-0.1pct）</a><span class="note">· 隆众资讯（金投网转） · 数据期9月18—24日</span></li>
+    <li><a href="https://tradingeconomics.com/commodity/bitumen">TradingEconomics沥青模型预测：本季度末5449.53元/吨、12个月后6028.98元/吨</a><span class="note">· TradingEconomics · 9月26日更新</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>3. 动力煤 <span class="cnt">（5条）</span></summary>
+<ul>
+    <li><a href="https://m.163.com/news/article/L7PAPITK0512D03F.html">华夏时报：年内大涨47%！动力煤再度逼近千元（秦港5500K报987元/吨、9月9—10日曾触及1002元）；卓创任慧云：10月高位震荡、先强后弱</a><span class="note">· 华夏时报 · 9月26日19:08发布（价格期9月23日）</span></li>
+    <li><a href="https://m.163.com/news/article/L7PAPITK0512D03F.html">一德期货曾翔：淡季缺少需求，只要补库需求释放、再站上千元关口难度不大；产量低位是主因（1—8月原煤产量累计减少约1亿吨）</a><span class="note">· 一德期货（华夏时报采访） · 9月26日</span></li>
+    <li><a href="https://list1.mysteel.com/zhishi/2026ndlmjgylb.html">Mysteel 2026年动力煤价格一览表：9月24日秦皇岛Q5500平仓983元/吨、广州港Q5500报1030—1050元/吨、鄂尔多斯Q5500坑口含税780—860元/吨</a><span class="note">· 我的钢铁网 · 数据期9月24日</span></li>
+    <li><a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表：动力煤2709收801.4元/吨持平（当日无成交）；焦煤2701收1509元/吨（-22）、焦炭2701收1974.5元/吨（-13）</a><span class="note">· 生意社 · 9月24日收盘</span></li>
+    <li><a href="https://m.163.com/news/article/L7PAPITK0512D03F.html">政策端：发改委9月初专题部署疆煤外运，三部门联合印发《关于做好煤炭安全稳产稳供工作的通知》，供给改善预期升温</a><span class="note">· 华夏时报 · 9月26日</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>4. 脱硫石膏 <span class="cnt">（16条）</span></summary>
+<ul>
+    <li><a href="https://www.sxhbcyw.cn/translate/show.php?itemid=72606">山东中华发电聊城发电厂10月、11月脱硫石膏处置询价：2.5万吨、最小交易量5000吨、保证金5万元，资源9月19日上架、9月20日报价</a><span class="note">· 陕西环保产业网（国能e电） · 9月19日上架</span></li>
+    <li><a href="https://www.huanbaozhaobiao.com/news-cd083b8d5866289a2d82cd4be376e56a">山东能源灵台电厂粉煤灰/炉渣/脱硫石膏网络电子竞价：起拍价-25元/吨、报名截止9月20日8:30、竞价9月20日8:30—9:00</a><span class="note">· 环保招标网 · 9月12日公告，9月20日竞价</span></li>
+    <li><a href="https://www.infochina.cn/rili-zhaobiao-20260912204634459224.html">山东能源灵台电厂固废竞拍公告：标的预估123万吨、起拍-25元/吨、总价-3075万元、保证金307.5万元</a><span class="note">· 谛听招标网 · 9月12日发布</span></li>
+    <li><a href="https://www.infochina.cn/zhaobiao-20260918151706791541.html">国能江油热电2027年度脱硫石膏销售竞价：5万吨、最小交易量5000吨、竞价9月21日9:00—12:00、取货期2027年全年</a><span class="note">· 谛听招标网 · 9月18日发布，9月21日开标</span></li>
+    <li><a href="https://ccb.dlnyzb.com/detail/42358882">上海华电望亭发电分公司2026—2027年度副产品（脱硫石膏）销售询比：公开询比、报价截止9月20日14:00、交货10月15日</a><span class="note">· 电招慧采 · 9月3日发布</span></li>
+    <li><a href="http://www.ygcgfw.com/gggs/001001/001001003/20260921/10492766-24f9-4c20-a87f-66281939b8ff.html">水发热电（荣成）2026—2027生产季炉渣、粉煤灰、脱硫石膏外委处置候选人公示：第一候选荣成市人和建军建材厂、报价240.195万元</a><span class="note">· 阳光采购服务平台 · 9月21日公示</span></li>
+    <li><a href="https://www.chengezhao.com/cms/post/0/8/087eeb856df2ce7ec21b5384601a084a">新会双水发电（B厂）煤渣、石膏处置中标候选人公示：标包B石膏处置第一候选广东新东日环保，公示期9月24—28日</a><span class="note">· 诚E招 · 9月24日公示（9月21日评标）</span></li>
+    <li><a href="https://www.12369zb.com/view/860/L0dztKABni4p5U9XSpfa.html">陕西华电榆横电厂生产现场石膏处置批次评标结果公示：铜川声威48.60元/吨（4万吨）、榆林恒源利尔48.80元/吨（2.4万吨），公示至9月21日</a><span class="note">· 环保招标采购网 · 9月18日发布</span></li>
+    <li><a href="https://www.zhaobiaoguancha.cn/search/detail?id=21921278">国能龙源环保荆州分公司石膏处置服务（第二批）标段Ⅱ竞价采购成交：湖北宏鑫发贸易有限公司</a><span class="note">· 招标观察网 · 9月14日中标公告</span></li>
+    <li><a href="https://www.msggzy.org.cn/front/qycq/030002/20260915/518e272a-949d-415d-a14f-c14ce72fa358.html">四川启明星铝业2026年脱硫石膏（综合）处置服务中标结果：四川兰丰水泥、100元/吨（不含税）</a><span class="note">· 眉山市公共资源交易中心 · 9月15日</span></li>
+    <li><a href="https://m.ccement.com/xm/bcon-688544758126969.html">华润水泥2026年4季度华南大区汽运基地电厂副产品公开询比：阳春脱硫石膏10500吨、罗定19200吨、惠州21000吨等，9月11日截止</a><span class="note">· 华润守正（水泥网转载） · 9月4日发布</span></li>
+    <li><a href="https://www.chinamae.com/partner/262605b7e3d0f1a81c59d24ded217afd.html">良田水泥2026—2027年度脱硫石粉采购公开询比：高钙脱硫石粉2375吨、9月21日8:00截止</a><span class="note">· 华润守正（机电设备采购平台转载） · 9月14日发布</span></li>
+    <li><a href="https://www.100njz.com/a/26082511/2B05471B3D347F23.html">新疆天达环保浙能阿克苏热电副产品公开竞价：脱硫石膏1.5万吨（合同期2026年9月—2027年8月）、炉渣2.5万吨、淡季粉煤灰8万吨</a><span class="note">· 百年建筑网 · 8月25日发布</span></li>
+    <li><a href="http://www.gdtzb.com/g-zb-46421079.html">华润电力（沈阳）2026—2027年度脱硫石膏综合利用招标：2×350MW机组、年供应量约9万吨、合同期2026年9月—2027年8月</a><span class="note">· 国电投电子商务平台转载 · 7月7日发布</span></li>
+    <li><a href="https://sthjj.trs.gov.cn/xzsp/slgs/202609/t20260918_90897570.html">贵州丰盈环保建材粉煤灰及脱硫石膏粉加工分选生产线建设项目环评受理公示：公示期9月18日—29日</a><span class="note">· 铜仁市生态环境局 · 9月18日</span></li>
+    <li><a href="https://bams.shansteelgroup.com/zhaobiaowenjian/gonggao/18176020260807105222283-%e6%8b%9b%e6%a0%87%e5%85%ac%e5%91%8a.docx">山东钢铁日照公司脱硫石膏竞卖公告：预估11000吨、拉运期9月1—30日、正负报价机制（正值买方付款/负值卖方付款）</a><span class="note">· 山钢集团招标拍卖平台 · 8月12日公告</span></li>
+    <li><a href="https://www.huishouzhaobiao.com/news-f943b5d5d36b65017dde63cd831716b0">云铝泽鑫补贴处置脱硫石膏约12000吨：处置费每吨不超64元（含装运）、出货期2026年9月—2027年8月</a><span class="note">· 资源回收招标网 · 数据期9月（年度合同）</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>5. 护面纸/瓦楞纸 <span class="cnt">（5条）</span></summary>
+<ul>
+    <li><a href="https://www.paper.com.cn/news/daynews/2026/26091509183318844.htm">涨价函纷至沓来：玖龙九大基地领涨（天津/河北9月26日瓦楞+50、9月28日牛卡+50、9月30日/10月8日/10月10日多批次），五洲特纸、湖北荣成跟涨</a><span class="note">· 纸业网 · 9月15日发布，执行日9月25日—10月10日</span></li>
+    <li><a href="https://www.paper.com.cn/price/biztipsview.php?id=16210">瓦楞纸市场价格行情（规模纸厂拉涨）：太仓玖龙瓦楞120g报3440元/吨、海龙70g报3840元/吨；天津玖龙计划9月26日、10月8日各+50；浙江山鹰高强瓦楞110—120g报3240元/吨平稳</a><span class="note">· 纸业网 · 9月21日行情</span></li>
+    <li><a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_2706aadcaf650852">涨价+停机安排：玖龙沈阳基地9月25日再生牛卡+50、9月28日瓦楞+50；东莞基地10月停机检修公函</a><span class="note">· 纸引未来网（搜一搜转载） · 9月19日发布</span></li>
+    <li><a href="https://123.paper.com.cn/news/daynews/2026/260908093225144834.htm">玖龙五大基地再生牛卡、瓦楞纸调价通知（9月16—19日生效，单品类+50元/吨）；江苏金田环保牛卡、高强瓦楞+50</a><span class="note">· 纸业网 · 9月8日发布</span></li>
+    <li><a href="https://paper.com.cn/news/daynews/2026/260904094022704927.htm">玖龙五大基地发布瓦楞纸调价通知（东莞9月10日、太仓9月10日、泉州9月12日、天津/河北9月14日起+50元/吨），节前防御性挺价</a><span class="note">· 纸业网 · 9月4日发布</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>6. 热轧板卷 <span class="cnt">（5条）</span></summary>
+<ul>
+    <li><a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表：热轧卷板2701收3298元/吨（-11）；螺纹钢2701收3118元/吨（-6）；铁矿石2701收713.5元/干吨（-2）</a><span class="note">· 生意社 · 9月24日收盘</span></li>
+    <li><a href="https://list1.m.mysteel.com/zhishi/2026nryzs84592.html">Mysteel 2026热轧走势：全国4.75mm均价3328元/吨（截至9月21日）、社会库存354.7万吨（-7.45）、钢厂盈利率仅7.79%、焦炭五轮提涨累计450—495元</a><span class="note">· 我的钢铁网 · 数据期截至9月21日</span></li>
+    <li><a href="https://list1.m.mysteel.com/zhishi/2026nryzs84592.html">Mysteel：预计10月热轧价格中枢下移至3150—3400元/吨区间、前高后低；京津冀带钢开工率61.29%、产能利用率73.82%</a><span class="note">· 我的钢铁网 · 数据期截至9月21日</span></li>
+    <li><a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表：焦煤2701收1509元/吨（-22）、焦炭2701收1974.5元/吨（-13），炉料成本端走弱</a><span class="note">· 生意社 · 9月24日收盘</span></li>
+    <li><a href="https://news.qq.com/rain/a/20260926A02R1700">陆家嘴财经早餐9月26日：LME基本金属涨跌参半，外盘宏观情绪对黑色系节后定价的传导待观察</a><span class="note">· 陆家嘴财经早餐（腾讯） · 9月26日</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>7. SBS <span class="cnt">（5条）</span></summary>
+<ul>
+    <li><a href="https://www.mysteel.com/hot/1638300.html">隆众SBS周评（9月18—24日）：中石化丁二烯9月24日执行13500元/吨（周内下调）；干胶理论成本15280、油胶14461元/吨；企业库存2.20万吨（-1.79%）、产能利用率28.76%（-7.01pct）</a><span class="note">· 隆众资讯（Mysteel） · 数据期9月18—24日</span></li>
+    <li><a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社9月25日化工涨跌榜：丁二烯13433.33元/吨持平（同比+45.75%）</a><span class="note">· 生意社 · 9月25日</span></li>
+    <li><a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表：丁二烯橡胶2611收15680元/吨（+545）、苯乙烯2611收9730元/吨（+232）</a><span class="note">· 生意社 · 9月24日收盘</span></li>
+    <li><a href="https://www.mysteel.com/hot/1638292.html">隆众聚焦：金九旺季不旺，SBS高成本与弱需求僵持加剧——道改、防水、TPR鞋材三大下游均未现预期增量，改性沥青成本达年内峰值</a><span class="note">· 隆众资讯（Mysteel） · 数据期9月中旬</span></li>
+    <li><a href="https://www.mysteel.com/hot/1638300.html">隆众SBS周评（9月11—17日）：中石化丁二烯9月17日执行14200元/吨，一周内累计下调700元至13500元</a><span class="note">· 隆众资讯（Mysteel） · 数据期9月11—17日</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>8. 钛白粉 <span class="cnt">（5条）</span></summary>
+<ul>
+    <li><a href="https://stock.10jqka.com.cn/20260924/c680251040.shtml">钛白粉巨头拟7.66亿元海外拿矿（Durack/Yandanooka矿砂项目）；金红石型主流含税出厂价14500—15500元/吨、锐钛型13000—13500元/吨</a><span class="note">· 同花顺 · 9月24日</span></li>
+    <li><a href="https://m.mysteel.com/hot/1592966.html">隆众钛白粉周评（9月18—24日）：9月24日硫酸法金红石型均价14166元/吨（周+0.58%）、锐钛型12932元/吨（+3.08%）；龙佰R996报15800元/吨、氯化法BLR-895报17100元/吨</a><span class="note">· 隆众资讯（Mysteel） · 数据期9月18—24日</span></li>
+    <li><a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社9月25日化工涨跌榜：钛白粉14220元/吨持平（同比+2.89%）</a><span class="note">· 生意社 · 9月25日</span></li>
+    <li><a href="https://m.mysteel.com/hot/1592966.html">隆众9月24日报道：济南裕兴化工14万吨/年装置检修、R838/R818/R868暂不报价；原料硫酸价格大幅回落、各企业成本差距扩大</a><span class="note">· 隆众资讯（Mysteel） · 9月24日</span></li>
+    <li><a href="https://list1.mysteel.com/zhishi/jttbfjg.html">Mysteel今天钛白粉价格：9月中旬硫酸法金红石型12800—15200元/吨，超20家企业跟涨约700元/吨后低价货源减少、交投氛围偏淡</a><span class="note">· 我的钢铁网 · 数据期9月中旬</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>9. 乳液 <span class="cnt">（5条）</span></summary>
+<ul>
+    <li><a href="https://finance.sina.com.cn/stock/relnews/cn/2026-09-20/doc-inisnhav1536865.shtml">万华化学9月20日上调丙烯酸丁酯东北报价150元/吨至10450元/吨，企业挺价意愿较强</a><span class="note">· 生意社（新浪财经转载） · 9月20日</span></li>
+    <li><a href="https://www.100ppi.com/data/detail-20260917-1249293.html">生意社9月17日化工情报：万华丙烯酸丁酯东北/华北/华东/华南四区域报价各+150元/吨（华东10500、华南10550元/吨）</a><span class="note">· 生意社 · 9月17日</span></li>
+    <li><a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社9月25日化工涨跌榜：丙烯酸8566.67元/吨持平（同比+27.23%）、苯乙烯10080元/吨持平（同比+41.57%）</a><span class="note">· 生意社 · 9月25日</span></li>
+    <li><a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表：苯乙烯2611收9730元/吨（+232）、纯苯2611收8561元/吨（+197）</a><span class="note">· 生意社 · 9月24日收盘</span></li>
+    <li><a href="https://www.guolichem.com/case/1253.html">9月1日化工龙头调价集中生效：万华丙烯酸+200、丙烯酸丁酯+400元/吨；巴斯夫、湛新树脂等同步上调（企业侧综述）</a><span class="note">· 国力化工（企业稿，自媒体属性） · 数据期9月1日</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>10. 环氧树脂 <span class="cnt">（5条）</span></summary>
+<ul>
+    <li><a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社9月25日化工涨跌榜：环氧树脂15650元/吨持平（同比+5.98%）、双酚A 11190元/吨持平（同比+42.48%）、环氧氯丙烷11200元/吨持平（同比-8.20%）；当日仅乙醇、液氨变动</a><span class="note">· 生意社 · 9月25日</span></li>
+    <li><a href="https://www.100ppi.com/vane/detail-1304.html">生意社环氧树脂基准价页：最新基准价15650元/吨，节前持稳</a><span class="note">· 生意社 · 9月25日</span></li>
+    <li><a href="https://www.100ppi.com/vane/detail-1301.html">生意社双酚A基准价页：最新基准价11190元/吨，高位持稳</a><span class="note">· 生意社 · 9月25日</span></li>
+    <li><a href="https://www.100ppi.com/vane/detail-439.html">生意社环氧氯丙烷基准价页：最新基准价11200元/吨</a><span class="note">· 生意社 · 9月25日</span></li>
+    <li><a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表：纯苯2611收8561元/吨（+197），上游芳烃端节前收涨</a><span class="note">· 生意社 · 9月24日收盘</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>11. 金属包装 <span class="cnt">（4条）</span></summary>
+<ul>
+    <li><a href="https://list1.mysteel.com/zhishi/2026nlyzs.html">Mysteel 2026冷轧走势：9月24日当周冷轧社会库存232.09万吨（+0.79）、五大品种总库存1481.97万吨（-55.76）；西南受汽车排产骤降拖累、冷轧库存同比+11.4%</a><span class="note">· 我的钢铁网 · 数据期9月24日当周</span></li>
+    <li><a href="https://list1.mysteel.com/zhishi/2026nlyzs.html">Mysteel普钢价格指数·钢板：9月26日报3473.4点（-5.90）；预计短期冷轧窄幅震荡、10月价格重心下移压力较大</a><span class="note">· 我的钢铁网 · 9月26日更新</span></li>
+    <li><a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表：热轧卷板2701收3298元/吨（-11）、不锈钢2611收13815元/吨（-120），板带材盘面节前走弱</a><span class="note">· 生意社 · 9月24日收盘</span></li>
+    <li><a href="https://list1.mysteel.com/zhishi/2026nlyzs.html">Mysteel：成本托底与需求疲软并存，冷轧镀锌短期延续窄幅震荡；镀冷价差作为下游金属包装利润的辅助观察指标</a><span class="note">· 我的钢铁网 · 数据期9月24日当周</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>12. 塑料包装（PP·华南·K8003） <span class="cnt">（5条）</span></summary>
+<ul>
+    <li><a href="https://intl.21cp.com/market/detail/157572995177545728--1.html">中塑在线：PP K8003（茂名石化）参考价最新至9月18日报10600元/吨；9月19—26日华南报价未更新（假期口径）</a><span class="note">· 中塑在线 · 数据期9月18日</span></li>
+    <li><a href="https://futures.100ppi.com/qhb/domestic/day-2026-09-24.html">生意社9月24日内期表：聚丙烯2701收8631元/吨（+90）、丙烯2611收8998元/吨（+75）</a><span class="note">· 生意社 · 9月24日收盘</span></li>
+    <li><a href="https://top.100ppi.com/hghy/detail-day---1.html">生意社9月25日化工涨跌榜：丙烯9444.33元/吨持平（同比+42.32%），华南PP原料端持稳</a><span class="note">· 生意社 · 9月25日</span></li>
+    <li><a href="https://news.qq.com/rain/a/20260926A02UCD00">华尔街见闻早餐9月26日：假期外盘油价累计回落，能化板块节后开盘面临成本重定价（PP为原油系下游品种）</a><span class="note">· 华尔街见闻 · 9月26日</span></li>
+    <li><a href="https://intl.21cp.com/market/detail/1334753102250672128.html">中塑在线K8003另一市场序列（广州石化/东莞樟木头口径）：近期报价序列与茂名石化口径互为参照</a><span class="note">· 中塑在线 · 数据期9月中旬</span></li>
+</ul>
+</details>
+
+<details class="news-list">
+  <summary>0. 原油长期展望（权威投行 / 媒体二次转载） <span class="cnt">（5条）</span></summary>
+<p class="news-note">本板块汇集权威投行与权威媒体（含二次转载）的最新油价预测与地缘立场；<strong>发布日均为9月25日—9月27日</strong>（预测期可至2026/2027年）；每条附「本期核心结论」简评；节前假期窗口内地缘变量密集，特此集中呈现。</p>
+<ul>
+    <li><a href="https://www.toutiao.com/article/7689994329128960531/">特朗普拒绝伊朗"七日重开霍尔木兹"提议，称美方完全控制海峡、大量石油正从海峡流出，并告知助手可能于11月中期选举后恢复对伊轰炸；伊朗总统佩泽希齐扬称"每一轮谈判后美国都会发动袭击"、不再信任与美对话；伊朗外长27日称正等待调解方传达美方最终立场</a>
+      <div class="note-summary">▸ 本期核心结论：周五"七日方案"驱动的溢价回吐被周六的拒绝表态部分逆转，油价定价主轴重回"谈判反复+军事风险"；中期选举成为美方行动时点的显性参照，节后开盘波动率或放大。</div>
+      <span class="note">华尔街日报 / 京报网（头条转载） · 9月27日07:45发布</span></li>
+    <li><a href="https://www.toutiao.com/a1877351925389316">申万宏源：中性假设下美国中期选举前油价维持高位、中枢约100美元/桶；选举后或于2026年末至2027年初逐季下行至75美元附近，但受低库存与成品油瓶颈约束、中枢仍高于冲突前</a>
+      <div class="note-summary">▸ 本期核心结论：申万以"选举"为分水岭给出两段式路径，与当前"十一前后为变量密集期"的日历结构吻合；75美元的中期回落目标意味着当前地缘溢价被视为阶段性而非永久性。</div>
+      <span class="note">申万宏源（头条行情分析稿9月26日引用） · 9月26日发布</span></li>
+    <li><a href="https://www.toutiao.com/a1877351925389316">美国银行：将2026年下半年布伦特预测由83美元上调至95美元，认为地缘紧张将持续至年底；若破坏持续至2027年春季，前端合约可能飙至150美元上方</a>
+      <div class="note-summary">▸ 本期核心结论：美银基准95美元高于申万选举前中枢（100美元）的回落斜率预期，其150美元尾部情景与高盛120美元上行情景构成投行阵营的"上行风险带"；同稿中平安证券给出90—100美元区间震荡的折中判断。</div>
+      <span class="note">美国银行（路透9月22日；头条9月26日分析稿再引） · 9月26日稿发布</span></li>
+    <li><a href="https://www.toutiao.com/a1877351925389316">平安证券：短期布伦特较难回落，预期油价在90—100美元/桶区间震荡运行</a>
+      <div class="note-summary">▸ 本期核心结论：内资券商将震荡区间下沿设在90美元，与周五WTI 92.41美元收盘价几乎重合——若节后油价跌破90美元，则意味着"七日方案"重获定价权，区间判断需修正。</div>
+      <span class="note">平安证券（头条行情分析稿9月26日引用） · 9月26日发布</span></li>
+    <li><a href="https://news.qq.com/rain/a/20260926A02UCD00">摩根士丹利：全球柴油价格已创历史新高，西北欧每日依赖从美国进口约25万桶柴油；若美方限制柴油出口，欧洲柴油库存或雪上加霜；同日白宫启动针对短期柴油出口禁令的正式经济评估</a>
+      <div class="note-summary">▸ 本期核心结论：成品油裂解价差成为比原油更紧的一环——柴油"历史新高+出口禁令评估"组合意味着即使原油随谈判回落，炼厂利润与运输燃料成本仍可能维持高位，对沥青、SBS等重油链下游构成间接支撑。</div>
+      <span class="note">摩根士丹利 / 华尔街见闻早餐 · 9月26日发布</span></li>
+</ul>
+</details>
+
+<div class="footer">
+  大宗原材料行情简报 · 2026-09-27 早报<br>
+  本简报基于当日公开新闻信息源整理，已核验各条信息所涉数据周期，仅提示市场风险，不构成采购操作指令。
+</div>
+
+</body>
+</html>
